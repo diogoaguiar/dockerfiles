@@ -25,7 +25,7 @@ Trees are not just wood waiting to be harvested. They're **living, breathing org
 - **Sound travels** in fascinating ways through wood.
 - Trees might be **chatting** right under our noses.
 
-![Image of a Whispering Tree](../assets/images/whispering_tree.png)
+<img src="/assets/images/whispering_tree.png" alt="Whispering Tree" style="max-height:400px; display:block;">
 
 ---
 

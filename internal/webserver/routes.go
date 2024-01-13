@@ -1,9 +1,8 @@
 package webserver
 
 import (
-	"net/http"
-
 	article_controller "github.com/diogoaguiar/diogoaguiar.pt/internal/webserver/controller/article"
+	status_controller "github.com/diogoaguiar/diogoaguiar.pt/internal/webserver/controller/status"
 	"github.com/labstack/echo/v4"
 )
 
@@ -23,13 +22,16 @@ const (
 func InitRoutes(e *echo.Echo) {
 	echoInstance = e
 	registerRoutes()
+	registerStaticFiles()
 }
 
 func registerRoutes() {
-	route(GET, "/status", func(c echo.Context) error {
-		return c.String(http.StatusOK, "OK")
-	})
+	route(GET, "/status", status_controller.GetStatus)
 	route(GET, "articles/:article", article_controller.GetArticle)
+}
+
+func registerStaticFiles() {
+	echoInstance.Static("/assets/*", "assets")
 }
 
 func route(method Method, path string, handlerFunc echo.HandlerFunc) {
