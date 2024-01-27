@@ -1,0 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
+{
+	"name": "PROJECT_NAME",
+    
+	"dockerComposeFile": "../docker/go.devcontainer.compose.yaml",
+	"service": "workspace",
+	"workspaceFolder": "/workspace",
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			},
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"golang.go"
+			]
+		}
+	},
+
+	"remoteUser": "developer"
+}
