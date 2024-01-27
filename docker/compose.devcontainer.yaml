@@ -1,0 +1,7 @@
+services:
+  workspace:
+    build:
+      context: ..
+      dockerfile: ./docker/devcontainer.dockerfile
+    volumes:
+      - ..:/workspace:cached
