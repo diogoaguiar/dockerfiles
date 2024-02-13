@@ -65,4 +65,6 @@ RUN chown ${USER_UID}:${USER_GID} ${WORKSPACE}
 WORKDIR ${WORKSPACE}
 
 # Run forever
-ENTRYPOINT ["./docker/wait_forever.sh"]
+RUN mkdir -p /docker
+COPY ../entrypoints/wait_forever.sh /docker/wait_forever.sh
+ENTRYPOINT ["/docker/wait_forever.sh"]
